@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nidhi Pandya - Civic-Tech Founder & Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 3rem;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
+            display: block;
+            border: 6px solid #fff;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+
+        h1 {
+            color: #1a202c;
+            font-size: 2.75rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #4a5568;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #4a5568;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover, .social-link:focus {
+            background: #edf2f7;
+            border-color: #cbd5e0;
+            transform: translateY(-1px);
+        }
+
+        .email {
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .email:hover, .email:focus {
+            color: #2c5282;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: #1a202c;
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .bio {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #4a5568;
+        }
+
+        .bio p {
+            margin-bottom: 1.25rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ebf8ff 0%, #bee3f8 100%);
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #2c5282;
+        }
+
+        .voice-project {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .voice-project::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(30px, -30px);
+        }
+
+        .voice-project h2 {
+            color: white;
+            margin-bottom: 1.25rem;
+            font-size: 1.875rem;
+            font-weight: 700;
+        }
+
+        .voice-project p {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+
+        .writing-section {
+            padding: 2rem;
+            background: linear-gradient(145deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .writing-intro {
+            font-size: 1.125rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .blog-post {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #3182ce;
+        }
+
+        .blog-post:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .blog-title {
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+
+        .blog-subtitle {
+            color: #718096;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .blog-date {
+            color: #a0aec0;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .education {
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .edu-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: #f7fafc;
+            border-radius: 12px;
+            border-left: 4px solid #3182ce;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-title {
+            font-weight: 700;
+            color: #1a202c;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-school {
+            color: #3182ce;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-years {
+            color: #718096;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .voice-project, .writing-section, .education {
+                padding: 1.5rem;
+            }
+
+            .blog-post {
+                padding: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.875rem;
+            }
+
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .title {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: 2px solid #3182ce;
+            outline-offset: 2px;
+        }
+
+        .blog-post:focus-within {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #3182ce;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <img src="https://i.imgur.com/vUTYRTj.jpg" 
+                 alt="Nidhi Pandya - Professional headshot" 
+                 class="profile-photo">
+            <h1>Nidhi Pandya</h1>
+            <p class="title">Civic-Tech Founder & Software Engineer | Flutter Developer | IT Systems Architect</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:np85809p@pace.edu" class="email">np85809p@pace.edu</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>New York City Metropolitan Area</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/nidhipandya16" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://medium.com/@nidhipandya1606" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <span>✍️</span>
+                    <span>Medium</span>
+                </a>
+                <a href="https://github.com/nidhip1611" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <span>💻</span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </header>
+
+        <section class="section bio">
+            <h2 class="section-title">👋 About Me</h2>
+            <p>
+                I'm a <span class="highlight">civic-tech founder and software engineer</span> with deep expertise in building scalable systems that solve real-world problems. With 7+ years of experience leading technical teams and managing enterprise IT projects, I've developed a unique perspective on how technology can drive meaningful social impact.
+            </p>
+            <p>
+                Currently pursuing my Master's degree in Computer Science at Pace University, I specialize in Flutter development, database architecture (SQL, AWS), and full-stack web technologies. My technical foundation spans languages including Python, Java, C++, and frameworks like React, with extensive experience in project management tools and data visualization platforms.
+            </p>
+            <p>
+                Before founding Voice, I led support teams of 10+ specialists, managed 15+ IT projects with consistent on-time delivery, and drove operational improvements that increased efficiency by 20% across multiple organizations. I believe in building technology that serves people, not the other way around.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="voice-project">
+                <h2>🗳️ Voice - Transforming Civic Engagement</h2>
+                <p>
+                    <strong>Voice</strong> is my flagship project — a comprehensive mobile platform designed to bridge the gap between citizens and democracy. Built with Flutter and Firebase, Voice connects users with their representatives, provides real-time policy updates, and offers actionable tools for political engagement.
+                </p>
+                <p>
+                    This isn't just another civic app. Voice employs enterprise-level architecture to handle complex government data integration, real-time notifications, and scalable user engagement features. The platform represents the intersection of technical excellence and social purpose — where robust systems meet human needs.
+                </p>
+                <p>
+                    Through Voice, I'm proving that civic technology requires the same architectural rigor as any enterprise solution, but with the added responsibility of serving democratic participation.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="writing-section">
+                <h2 class="section-title">✍️ Technical Writing & Insights</h2>
+                <p class="writing-intro">
+                    I regularly write about Flutter development, civic technology architecture, and the lessons learned building Voice. My articles focus on practical insights for developers working on complex, purpose-driven applications.
+                </p>
+                
+                <a href="https://medium.com/@nidhipandya1606/the-hidden-science-behind-app-colors-what-every-flutter-developer-should-know-2d36ae2b2f3b" 
+                   target="_blank" rel="noopener noreferrer" class="blog-link">
+                    <article class="blog-post">
+                        <h3 class="blog-title">The Hidden Science Behind App Colors: What Every Flutter Developer Should Know</h3>
+                        <p class="blog-subtitle">How color psychology research transformed my approach to mobile app design and user experience optimization</p>
+                        <time class="blog-date">August 13, 2024</time>
+                    </article>
+                </a>
+
+                <a href="https://medium.com/@nidhipandya1606/from-complexity-to-code-the-flutter-architecture-behind-voice-83cfbbe92283" 
+                   target="_blank" rel="noopener noreferrer" class="blog-link">
+                    <article class="blog-post">
+                        <h3 class="blog-title">From Complexity to Code: The Flutter Architecture Behind Voice</h3>
+                        <p class="blog-subtitle">Deep dive into transforming chaotic government data into a scalable, maintainable civic engagement platform</p>
+                        <time class="blog-date">July 29, 2024</time>
+                    </article>
+                </a>
+
+                <a href="https://medium.com/@nidhipandya1606/this-isnt-just-another-crud-app-2a0242c44fc3" 
+                   target="_blank" rel="noopener noreferrer" class="blog-link">
+                    <article class="blog-post">
+                        <h3 class="blog-title">This Isn't Just Another CRUD App</h3>
+                        <p class="blog-subtitle">Why political engagement platforms demand enterprise-level Flutter architecture and advanced state management</p>
+                        <time class="blog-date">June 24, 2024</time>
+                    </article>
+                </a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="education">
+                <h2 class="section-title">🎓 Education & Qualifications</h2>
+                <div class="edu-item">
+                    <h3 class="edu-title">Master of Science in Computer Science</h3>
+                    <div class="edu-school">Pace University</div>
+                    <div class="edu-years">2024 - 2026 | New York City</div>
+                </div>
+                <div class="edu-item">
+                    <h3 class="edu-title">Bachelor of Engineering - Information and Communication Technology</h3>
+                    <div class="edu-school">Gujarat Technological University</div>
+                    <div class="edu-years">2011 - 2015 | CGPA: 7.24/10.0</div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
